@@ -1,0 +1,16 @@
+1. This is a review of the manuscript "Verification of Galileo's Acceleration Experiment: Motion of Rolling Spherical Objects Down an Inclined Plane" by Sharma, DeMairo, and Liddawi. I recommend rejecting the MS due to major conceptual and methodological flaws. The MS purports to test similar to Galileo's Renaissance era "motion experiment" (presumably the inclined plane experiment in which the movement under equal time intervals, but no source is given!) and tests a baseball and a ping pong ball, purporting to show that acceleration is independent of mass. This is the height of confirmation bias; the authors assumed Galileo said "g=constant" and their results are easily contradicting simply by rolling a ring versus a disk of the same mass down the same inclined plane.
+
+2. Introduction: A constant acceleration kinematics formula is given without source; it assumes CONSTANT ACCELERATION so using it to show acceleration is constant is probably kind of circular!
+
+The authors stated goal is to determine if our results support Galileo's proposed relationship between distance and time squared; to evaluate whether accleration on an inclined plane is indpendent of mass. A key thing they do not seem to consider is that their objects are rolling (without slipping?).
+
+3. Methods: The methods are relatively clean execept the authors do not give any details of how the video analysis was done - what software, what settings, how was the calibration done, and was every frame analyzed? Details of the data fits using Desmos are not given either.
+
+4. Results: The results are given as two graphs figs 2.1 and 2.2 showing the trajectories of several trials of baseball versus ping pong ball. The different axes make it impossible to directly compare these.
+
+The formula A = 2d/t^2 should be explained in methods not results. The authors compare the acceleration if constant acceleration is assumed. They do not explain the departures of their position vs time graph from parabolic (which is what they were assuming) such as the toe at 1s. The statistical procedures of using a t-test should be explained in the methods.
+
+5. Discussion: The most difficult thing about their discussion is that when the students consider angular momentum and moment of inertia, it is readily and easily demonstrated that their findings are wrong! It is possible to pick objects of the same mass and different moment of inertia that will roll down the incline in different times. The authors are referred to Tipler (2004) to read about this.
+
+Its unclear why they felt a need to relate this to mass at all in the first place; the original Galileo inclined plane experiments showed that in equal time intervals the distance traveled grew by odd numbers or by squares of time; which was support for the very existence of "acceleration" rather than just motion at a given velocity. The authors would have done better to structure their findings around this rather than pushing to reach an untrue result / succumbing to confirmation bias.
+
