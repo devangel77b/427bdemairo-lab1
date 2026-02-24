@@ -6,7 +6,7 @@
 \usepackage{bm}
 \usepackage{siunitx}
 %\usepackage{tikz,pgfplots}
-\sisetup{separate-uncertainty=true}
+\sisetup{separate-uncertainty=true,multi-part-units=single}
 \usepackage[colorlinks,allcolors=blue]{hyperref}
 \usepackage{cleveref}
 \crefname{equation}{}{}
@@ -23,19 +23,19 @@ pdfauthor={Ishaan Sharma, Blaise DeMairo, and Alexander Liddawi},
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[RE,RO]{J S\&E \textbf{2}, 36--38 (2026)}
+\fancyhead[RE,RO]{J S\&E \textbf{2}, 38--40 (2026)}
 \fancyhead[LO]{Sharma, DeMairo, and Liddawi}
 \fancyhead[LE]{Analyzing Galileo's inclined plane}
 \fancyfoot[C]{\thepage}
 \fancypagestyle{mytitlepage}{
 \fancyhf{}
-\fancyhead[C]{Journal of Science \& Engineering \textbf{2}, 36--38 (2026)}
+\fancyhead[C]{Journal of Science \& Engineering \textbf{2}, 38--40 (2026)}
 \fancyfoot[C]{\thepage}
 }
 
 
 \begin{document}
-\setcounter{page}{36}
+\setcounter{page}{38}
 
 \title{Analyzing Galileo’s distance-time relationship for rolling motion on an inclined plane}
 \author{Ishaan Sharma}
@@ -46,7 +46,7 @@ pdfauthor={Ishaan Sharma, Blaise DeMairo, and Alexander Liddawi},
 \date{\today}
 
 \begin{abstract}
-The purpose of this experiment was to determine whether the rolling motion of spherical objects on an inclined plane is consistent with a constant-acceleration model and whether displacement is proportional to the square of time elapsed. Using a setup and procedure similar to Galileo’s Renaissance-era motion experiment, a ping pong ball and a baseball were rolled down a fixed inclined plane five times each, and their motion was measured using high-frame-rate video analysis. Position–time data were extracted, analyzed, and plotted using Matplotlib to evaluate the relationship between displacement and time. Both objects exhibited displacement proportional to the square of time ($t^2$), indicating motion consistent with constant acceleration. These results support the application of constant-acceleration kinematics to rolling motion on an incline and are consistent with Galileo’s conclusion that motion on an incline is uniformly accelerated.
+The purpose of this experiment was to determine whether the rolling motion of spherical objects on an inclined plane is consistent with a constant-acceleration model and whether displacement is proportional to the square of time elapsed. Using a setup and procedure similar to Galileo’s Renaissance-era motion on an inclined plane experiment, a ping pong ball and a baseball were rolled down a fixed inclined plane five times each, and their motion was measured using high-frame-rate video analysis. Position–time data were extracted, analyzed, and plotted to evaluate the relationship between displacement and time. Both objects exhibited displacement proportional to the square of time ($t^2$), indicating motion consistent with constant acceleration. These results support the application of constant-acceleration kinematics to rolling motion on an incline and are consistent with Galileo’s conclusion that motion on an incline is uniformly accelerated.
 \end{abstract}
 
 \keywords{keywords here}
@@ -65,11 +65,11 @@ x = \frac{1}{2} a t^2
 \end{equation}
 where $x$ is the displacement of the object along the incline, $a$ is the acceleration of the object, and $t$ is the elapsed time since the object was released from rest \cite{tipler, openstax, barrons}. Although the equation is derived under the assumption that acceleration is constant, this relationship predicts a parabolic position–time curve and linear position-time slope, and in that sense serves as a diagnostic test for constant acceleration
 
-This relationship was first demonstrated by Galileo Galilei in his 1638 work Discourses and Mathematical Demonstrations Relating to Two New Sciences, in which he used inclined planes to study the motion of rolling objects \cite{galilei:1638:discorsi, machamer:2021:galileo}. Galileo reported that, across repeated trials, ``the spaces traversed were to each other as the squares of the times,'' independent of the inclination of the plane \cite{galilei:1638:discorsi}. He further described this relationship by noting that the distances covered in successive equal time intervals follow the ratio of odd numbers: ``1, 3, 5, 7...'' a result which implies that total displacement grows as the square of elapsed time. Galileo’s inclined-plane experiments thus provided an early experimental demonstration of uniformly accelerated motion, establishing that displacement increases systematically with time rather than remaining proportional to instantaneous velocity alone.
+This relationship was first demonstrated by Galileo Galilei in his 1638 work \emph{Discourses and Mathematical Demonstrations Relating to Two New Sciences}, in which he used inclined planes to study the motion of rolling objects \cite{galilei:1638:discorsi, machamer:2021:galileo}. Galileo reported that, across repeated trials, ``the spaces traversed were to each other as the squares of the times,'' independent of the inclination of the plane \cite{galilei:1638:discorsi}. He further described this relationship by noting that the distances covered in successive equal time intervals follow the ratio of odd numbers: ``1, 3, 5, 7...'' a result which implies that total displacement grows as the square of elapsed time \cite{galilei:1638:discorsi}. Galileo’s inclined-plane experiments thus provided an early experimental demonstration of uniformly accelerated motion, establishing that displacement increases systematically with time rather than remaining proportional to instantaneous velocity alone.
 
 In practical systems, rolling motion introduces rotational dynamics that fundamentally alter acceleration \cite{tipler, openstax, barrons}. For objects rolling without slipping, translational acceleration depends on both gravitational components and the object’s moment of inertia. Consequently, objects with different mass distributions or surface interactions are not necessarily expected to exhibit identical accelerations, even under similar conditions. 
 
-The purpose of this experiment was to examine whether rolling spherical objects on a fixed inclined plane exhibits displacement proportional to the square of elapsed time, consistent with constant acceleration. Using video analysis, we evaluated the extent to which constant-acceleration kinematics describes real rolling motion and identified sources of deviation from ideal behavior.
+The purpose of this experiment was to recreate Galileo's inclined plane experiment, to examine whether rolling spherical objects on a fixed inclined plane exhibits displacement proportional to the square of elapsed time, consistent with constant acceleration. Using video analysis, we evaluated the extent to which constant-acceleration kinematics describes real rolling motion and identified sources of deviation from ideal behavior.
 %Hypotheses:
 %Null (H0): 
 Based on \cite{galilei:1638:discorsi}, we hypothesize that the displacement of a rolling spherical object on a fixed inclined plane is proportional to the square of elapsed time, consistent with constant acceleration over the measurement interval, e.g. \cref{eq:1}. Alternatively, 
@@ -93,7 +93,7 @@ Two spherical objects, a ping pong ball ($m=\qty{0.0018}{\kilo\gram}$, diameter 
 \begin{equation}
 I = \frac{2}{5} m r^2,
 \end{equation}
-where $r$ is the radius, reasoning for differences in measured acceleration. The inclined plane, an aluminum U-channel with an inner width of \qty{2}{\centi\meter}, was elevated at a fixed \ang{24} angle, measured with a protractor. A distance of \qty{90}{inch} (\qty{2.29}{\meter}) along the incline was our measurement path. Each object was released from rest at the top of the incline without any applied push, ensuring consistent initial conditions. Motion was recorded with an iPhone 14 camera (Apple; Cupertino, CA) at 60 frames per second with a resolution of 1080p. The camera was positioned perpendicular to the plane to best determine the position of the balls at different time intervals. Both the ping pong ball and the baseball were rolled five times under identical conditions to improve measurement reliability and reduce random error and variability.
+where $r$ is the radius, reasoning for differences in measured acceleration. The inclined plane, an aluminum U-channel with an inner width of \qty{2}{\centi\meter}, was elevated at a fixed \ang{24} angle, measured with a protractor. A distance of \qty{90}{inch} (\qty{2.29}{\meter}) along the incline was our measurement path. Each object was released from rest at the top of the incline without any applied push, ensuring consistent initial conditions. Rather than measure motion with chimes or pouring of wine \cite{galilei:1638:discorsi}, motion was recorded with an iPhone 14 camera (Apple; Cupertino, CA) at 60 frames per second with a resolution of 1080p. The camera was positioned perpendicular to the plane to best determine the position of the balls at different time intervals. Both the ping pong ball and the baseball were rolled five times under identical conditions to improve measurement reliability and reduce random error and variability.
 
 Video analysis was performed using Tracker software \cite{tracker, renika:2024:kinematics} to extract position and time data, which were plotted using Matplotlib as displacement ($x$) versus the square of time ($t^2$) based on \cref{eq:1}. Possible sources of error, including friction, air resistance, timing precision, etc., were considered in the interpretation and analysis of results. Position data were extracted at regular time intervals using Tracker \cite{tracker}, with spatial calibration performed using a known reference length along the incline. Representative frames were sampled consistently every three frames across each trial to reduce noise, avoid oversampling, and balance measurement resolution.
 
@@ -104,7 +104,7 @@ A = \dfrac{2d}{t^2}
 \end{equation}
 where $d$ is the total distance traveled along the incline (\qty{90}{inch}, \qty{2.29}{\meter}), and $t$ is the time. %the elapsed mean time for the 5 trials.
 
-Results were initially visualized in Python using the \texttt{numpy}, \texttt{scipy}, and \texttt{matplotlib} libraries \cite{numpy,scipy,matplotlib}. Subsequent statistical analysis \cite{starnes:2015:practice} was perfomed in R \cite{R} using the \texttt{ggplot2} and \texttt{dplyr} libraries \cite{ggplot2,dplyr}
+Results were initially visualized in Python using the \texttt{numpy}, \texttt{scipy}, and \texttt{matplotlib} libraries \cite{numpy,scipy,matplotlib}. Subsequent statistical analysis \cite{starnes:2015:practice} was perfomed in R \cite{R} using the \texttt{ggplot2} and \texttt{dplyr} libraries \cite{ggplot2,dplyr}. All data and analysis code is available at \url{https://github.com/devangel77b/427bdemairo-lab1}. 
 
 
 
@@ -114,14 +114,14 @@ Results were initially visualized in Python using the \texttt{numpy}, \texttt{sc
 \begin{center}
 \includesvg{fig21.svg}
 \end{center}
-\caption{Mean distance traveled across the inclined plane versus time for five trials fo the baseball and the ping pong ball.}
+\caption{Distance traveled down the inclined plane versus time for five trials for the baseball and the ping pong ball. Differences between baseball and ping pong ball are statistically significant (nested ANOVA, $p=\num{7.19e-11}$).}
 \label{fig:21}
 \end{figure}
 \begin{figure}
 \begin{center}
 \includesvg{fig22.svg}
 \end{center}
-\caption{Mean distance traveled across the inclined plane versus time squared for five trials fo the baseball and the ping pong ball.}
+\caption{Distance traveled down the inclined plane versus time squared for five trials fo the baseball and the ping pong ball. Differences between baseball and ping pong ball are statistically significant (nested ANOVA, $p=\num{7.19e-11}$).}
 \label{fig:22}
 \end{figure}
 
@@ -129,14 +129,10 @@ Position–time data for both the baseball and the ping pong ball were obtained 
 
 To further evaluate this relationship, displacement was plotted as a function of the square of time. Linear fits to these plots, as shown in \cref{fig:22}, showed strong agreement with the constant-acceleration model of \cref{eq:1}. This indicates that the rolling motion of both objects is well described by constant acceleration over the length of the incline. Slight discrepancies in both graphs from ``perfect'' parabolic or linear behavior can be attributed to previously-mentioned sources of error, ranging from the effect of rotational inertia to air resistance or precision inconsistencies.
 
-The mean times across five trials were used to compute representative acceleration values. For the baseball, the mean time to travel \qty{90}{inch} was \qty{2.221}{\second}, corresponding to an average acceleration of approximately %36.49 in/s². 
-For the ping pong ball, the mean time was \qty{2.332}{\second}, corresponding to an average acceleration of approximately %33.10 in/s². 
-The measured accelerations were approximately %36.49 in/s² (baseball) 
-and 
-%33.10 in/s² (ping pong ball), 
-within experimental uncertainty.
+The mean times across five trials were used to compute representative acceleration values. For the baseball, the mean time to travel \qty{90}{in} was \qty{2.221}{\second}, corresponding to an average acceleration of approximately \qty{36.49}{in\per\second\squared}. For the ping pong ball, the mean time was \qty{2.332}{\second}, corresponding to an average acceleration of approximately \qty{33.10}{in\per\second\squared}. 
 
-While the measured accelerations were not identical, both objects demonstrated motion consistent with constant acceleration, as evidenced by the quadratic displacement-time relationship. The observed differences in acceleration magnitude are consistent with expectations for rolling motion and do not detract from the validity of the constant-acceleration model.
+The measured accelerations, from linear regression of \cref{fig:22}, were approximately \qty{35.2\pm0.3}{in\per\second\squared} for baseball and \qty{32.0\pm0.3}{in\per\second\squared} for ping pong. %Differences between baseball and ping pong ball were significant (nested ANOVA, $p=\num{7.19e-11}$).
+ While the measured accelerations were not identical, both objects demonstrated motion consistent with constant acceleration, as evidenced by the quadratic displacement-time relationship. The observed differences in acceleration magnitude are consistent with expectations for different moments of inertia during rolling motion and do not detract from the validity of the constant-acceleration model.
 
 
 
